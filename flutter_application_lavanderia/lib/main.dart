@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'topbar.dart';
-//import 'servicecard.dart';
+import 'services.dart';
 import 'botombar.dart';
 
 void main() {
@@ -14,12 +14,15 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
+      theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       home: Scaffold(
         body: ListView(children: const [
           TopBar(),
+          Expanded(child: SingleChildScrollView(
+            child: Services(),
+          )),
           BottomBar()
         ]),
       ),
